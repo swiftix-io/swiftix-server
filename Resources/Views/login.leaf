@@ -1,0 +1,34 @@
+#set("title") {Login}
+#set("body") {
+        <div class="container">
+                <div class="card-wrapper">
+                    <div class="card fat">
+                        <div class="card-body">
+                            <h4 class="card-title">Login</h4>
+                            <form method="POST" action="/login">
+                                <div class="form-group">
+                                    <label for="email">E-Mail Address</label>
+                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password 
+                                    </label>
+                                    <input id="password" type="password" class="form-control" name="password" required>
+                                </div>
+                                <div class="form-group no-margin">
+                                    <button type="submit" class="btn btn-info btn-block">
+                                        Login
+                                    </button>
+                                </div>
+                                <div class="margin-top20 text-center">
+                                    Don't have an account? <a href="/register">register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+}
+#embed("base")
+

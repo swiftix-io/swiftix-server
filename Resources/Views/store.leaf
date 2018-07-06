@@ -1,0 +1,68 @@
+
+#set("body") {
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Items:</h4>
+            
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-shopping">
+                    <thead class="">
+                        
+                        <th class="img" >
+                        </th>
+                        <th >Item</th>
+                        
+                        <th >Start</th>
+                        <th>End </th>
+                        <th  class="text-right" ></th>
+                        
+                        <th  class="text-right" >Products</th>
+                    </thead>
+                    
+                    <tbody>
+                        #for(store in stores) {
+
+
+                        #for(item in store.items) {
+                        <tr>
+                            <td>
+                                <div class="img-container">
+                                    #if(item.image != nil) {  <img src="#(item.image)" alt=""> } else { <img src="/img/default.png" alt=""> }
+                                        </div>
+                            </td>
+                            
+                            <td class="td-name"><a href="/items/#(item.id)">#(item.name)</a><br/><small>#(item.description)</small></td>
+                            
+                            <td class="td-number">#(item.startDate)</td>
+                            
+                            <td class="td-number">#(item.endDate)</td>
+                            
+                            <td></td>
+                            
+                            <td>
+                                <ul class="list-group">
+                                    #for(product in item.products) {
+                                    
+                                    <li class="list-group-item"> #(product.name) - #(product.price/100) €</li>
+                                    
+                                    }
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+#embed("base")
+

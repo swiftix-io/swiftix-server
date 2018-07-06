@@ -1,0 +1,58 @@
+#set("title") {Stores}
+
+#set("body") {
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title"> Store list</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            City
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th class="text-right">
+
+                        </th>
+                    </thead>
+                    
+                    #for(store in stores) {
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="/stores/#(store.id)">#(store.name)</a>
+
+                            </td>
+                            <td>
+                                #(store.city)
+                            </td>
+                            <td>
+                                #(store.description)
+                            </td>
+                            <td class="text-right">
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    }
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+}
+
+#embed("base")
+

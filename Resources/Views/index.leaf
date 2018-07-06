@@ -1,0 +1,7 @@
+#set("title") {Welcome}
+
+#set("body"){
+
+}
+
+#embed("base")
